@@ -24,7 +24,7 @@ class HornedBeast extends React.Component {
         return (
             <>
                 <Card style={{ width: '14rem' }} className="mx-auto my-auto mb-3 h-100 ">
-                    <Card.Img variant="top" src={this.props.image_url} className="mx-auto my-2" />
+                    <Card.Img variant="top" src={this.props.image_url} onClick={this.props.setShowModalTrue} className="mx-auto my-2" />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>{this.props.description}</Card.Text>

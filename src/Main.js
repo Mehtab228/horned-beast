@@ -30,6 +30,7 @@ class Main extends React.Component {
     setBeastToState = (beast) => {
         this.setState({ selectedBeast: beast })
         this.setShowModalTrue();
+        console.log(this.state.selectedBeast);
     }
 
     handleChange = (event) => {
@@ -63,6 +64,8 @@ class Main extends React.Component {
                                     title={beast.title}
                                     keyword={beast.keyword}
                                     horns={beast.horns}
+                                    setBeastToState={() => this.setBeastToState(beast)}
+
                                 />
                                 
                             )
@@ -71,7 +74,7 @@ class Main extends React.Component {
                     </Row>
                 </Container>
                 {this.state.selectedBeast &&
-                    <BeastModal showModal={this.state.showModal} setShowModalFalse={this.setShowModalFalse} selectedBeast={this.state.selectedBeast} />
+                    <BeastModal showModal={this.state.showModal} setShowModalFalse={this.setShowModalFalse} selectedBeast={this.state.selectedBeast}/>
                 }
             </>
         )
